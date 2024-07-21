@@ -1,0 +1,1 @@
+El siguiente repositorio es para el proyecto final de Fundamentos de Programación, donde lo que se busca es crear un programa de simulación de un sistema de información de una Empresa de componentes electrónicos
