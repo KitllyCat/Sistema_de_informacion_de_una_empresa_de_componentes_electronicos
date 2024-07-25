@@ -112,17 +112,6 @@ void mostrarMenuBaseDeDatos(){
     }while (true);
 }
 
-void verificarContrasena(){
-    string contrasena;
-    cout << "Ingrese la contraseña para acceder a la base de datos: ";
-    cin >> contrasena;
-    if (contrasena == "employeesonly"){
-        mostrarMenuBaseDeDatos();
-    } else {
-        cout << "La contraseña es incorrecta, intente de nuevo..." << endl;
-    }
-}
-
 void mostrarMenuUsuario(){
     do{
         cout << "----- \"N-Tek\" -----" << endl;
