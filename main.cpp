@@ -1,8 +1,15 @@
 #include <iostream>
 #include <windows.h> //libreria para las tildes
 using namespace std;
-
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
+
+struct Producto {
+	string nombre;
+	float precioPromedio;
+};
+
+Producto productos[100];
+int cantidadProductos = 0; 	
 
 void mostrarMenuPrincipal(){
     cout << "----- \"N-Tek\" -----" << endl;
@@ -14,6 +21,18 @@ void mostrarMenuPrincipal(){
     cin >> opcionPrincipal;
     cout << endl;
 }
+
+void agregarProducto(){
+    cout << "Ingrese el nombre del producto: ";
+    cin.ignore();
+    getline(cin, productos[cantidadProductos].nombre);
+    cout << "Ingrese el precio en promedio del producto: ";
+    cin >> productos[cantidadProductos].precioPromedio;
+    cantidadProductos++;
+    cout << endl;
+    cout << "Producto agregado"<< endl;
+}
+
 
 void mostrarMenuBaseDeDatos(){
     do {
@@ -46,7 +65,7 @@ void mostrarMenuBaseDeDatos(){
                 //Añadir funcion para ver los productos ordenados por su precio
                 break;
             case 'D':
-                //Añadir funcion para agregar un nuevo producto
+                agregarProducto(); //Añade funcion para agregar un nuevo producto
                 break;
             case 'E':
                 //Añadir funcion para eliminar un producto
