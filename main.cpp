@@ -80,6 +80,17 @@ void mostrarMenuBaseDeDatos(){
     }while (true);
 }
 
+void verificarContrasena(){
+    string contrasena;
+    cout << "Ingrese la contraseña para acceder a la base de datos: ";
+    cin >> contrasena;
+    if (contrasena == "employeesonly"){
+        mostrarMenuBaseDeDatos();
+    } else {
+        cout << "La contraseña es incorrecta, intente de nuevo..." << endl;
+    }
+}
+
 void mostrarMenuUsuario(){
     do{
         cout << "----- \"N-Tek\" -----" << endl;
@@ -127,25 +138,35 @@ void mostrarMenuUsuario(){
 
 int main(){
     SetConsoleOutputCP(CP_UTF8);
-
     do{
         mostrarMenuPrincipal();
 
         switch (opcionPrincipal){
-            case 'A':
+            case 'A':{
                 mostrarMenuUsuario();
                 break;
-            case 'B':
-                mostrarMenuBaseDeDatos();
+            }
+            case 'B':{
+                string contrasena;
+   				cout << "Ingrese la contraseña para acceder a la base de datos: ";
+    			cin >> contrasena;
+    			if (contrasena == "employeesonly"){
+					mostrarMenuBaseDeDatos();
+   				}else{
+        			cout << "La contraseña es incorrecta, intente de nuevo..." << endl;
+   				}
                 break;
-            case 'C':
+            }
+            case 'C':{
                 cout << "Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
-            default:
+            }
+            default:{
                 cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
-        }
+        	}
         cout << endl;
+    	}
     }while (true);
 
     return 0;
