@@ -12,5 +12,5 @@ extern Producto productos[];
 extern int cantidadProductos;
 
 void verProductosAgregados();
-
+void verProductosAgregadosAlf();
 #endif 
