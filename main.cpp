@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h> //libreria para las tildes
 #include "mostrar_p.h"
+#include "agregar_p.h"
 using namespace std;
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
 
@@ -13,17 +14,6 @@ void mostrarMenuPrincipal(){
     cout << "Seleccione su opción: ";
     cin >> opcionPrincipal;
     cout << endl;
-}
-
-void agregarProducto(){
-    cout << "Ingrese el nombre del producto: ";
-    cin.ignore();
-    getline(cin, productos[cantidadProductos].nombre);
-    cout << "Ingrese el precio en promedio del producto: ";
-    cin >> productos[cantidadProductos].precioPromedio;
-    cantidadProductos++;
-    cout << endl;
-    cout << "Producto agregado"<< endl;
 }
 
 void mostrarMenuBaseDeDatos(){
