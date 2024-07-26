@@ -44,7 +44,7 @@ void mostrarMenuBaseDeDatos(){
                 verProductosAgregadosAlf(); //Añade funcion para ver los productos ordenados alfabéticamente
                 break;
             case 'C':
-                //Añadir funcion para ver los productos ordenados por su precio
+                verProductosAgregadosPrecio(); //Añade funcion para ver los productos ordenados por su precio
                 break;
             case 'D':
                 agregarProducto(); //Añade funcion para agregar un nuevo producto
