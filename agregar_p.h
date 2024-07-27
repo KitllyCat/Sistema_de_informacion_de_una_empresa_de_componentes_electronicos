@@ -8,5 +8,6 @@ extern Producto productos[];
 extern int cantidadProductos;
 
 void agregarProducto();
+void eliminarProducto();
 
 #endif
