@@ -14,4 +14,5 @@ extern int cantidadProductos;
 void verProductosAgregados();
 void verProductosAgregadosAlf();
 void verProductosAgregadosPrecio();
+
 #endif 
