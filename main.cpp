@@ -50,7 +50,7 @@ void mostrarMenuBaseDeDatos(){
                 agregarProducto(); //Añade funcion para agregar un nuevo producto
                 break;
             case 'E':
-                //Añadir funcion para eliminar un producto
+                eliminarProducto(); //Añade funcion para eliminar un producto
                 break;
             case 'F':
                 //Añadir funcion para actualizar los datos existentes
