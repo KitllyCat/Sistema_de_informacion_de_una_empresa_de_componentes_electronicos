@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h> //libreria para las tildes
+#include "usuario.h" //esta es la libreria que se usa para la funciones del menu
 using namespace std;
 
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
@@ -36,7 +37,7 @@ void mostrarMenuBaseDeDatos(){
         cout << endl;
 
         switch (opcionBaseDeDatos){
-            case 'A':
+            case 'A': 
                 //Añadir funcion para ver losproductos registrados 
                 break;
             case 'B':
