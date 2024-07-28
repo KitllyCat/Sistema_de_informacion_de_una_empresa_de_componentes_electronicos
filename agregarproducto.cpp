@@ -28,3 +28,24 @@ void eliminarProducto() {
 
     cout << "Producto no encontrado." << endl;
 }
+
+void actualizarProducto() {
+	string nombreActualizar;
+    cout << "Ingrese el nombre del producto a actualizar: ";
+    cin.ignore();
+    getline(cin, nombreActualizar);
+    bool encontrado = false;
+    for (int i = 0; i < cantidadProductos; i++) {
+        if (productos[i].nombre == nombreActualizar) {
+            cout << "Ingrese el nuevo precio del producto: ";
+            cin >> productos[i].precioPromedio;
+            cout<<endl;
+            cout << "Producto actualizado con éxito!" << endl;
+            encontrado = true;
+            break;
+        }
+    }
+    if (!encontrado) {
+        cout << "Producto no encontrado." << endl;
+    }
+}
