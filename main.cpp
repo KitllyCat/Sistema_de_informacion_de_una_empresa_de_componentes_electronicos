@@ -2,6 +2,7 @@
 #include <windows.h> //libreria para las tildes
 #include "mostrar_p.h"
 #include "agregar_p.h"
+#include "venta_p.h"
 using namespace std;
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
 
@@ -56,16 +57,16 @@ void mostrarMenuBaseDeDatos(){
                 actualizarProducto(); //Añade funcion para actualizar los datos existentes
                 break;
             case 'G':
-                //Añadir funcion para añadir una nueva venta
+                agregarVenta();  //Añade funcion para añadir una nueva venta
                 break;
             case 'H':
-                //Añadir funcion para mostrar las ventas realizadas
+            //Añade funcion para mostrar las ventas realizadas
                 break;
             case 'I':
-                //Añadir funcion para mostrar las ventas ordenadas por el precio
+                //Añade funcion para mostrar las ventas ordenadas por el precio
                 break;
             case 'J':
-                //Añadir funcion para ver las recomendaciones de los usuarios
+                //Añade funcion para ver las recomendaciones de los usuarios
                 break;
             case 'K':
                 cout << "Regresando al menú principal..." << endl;
