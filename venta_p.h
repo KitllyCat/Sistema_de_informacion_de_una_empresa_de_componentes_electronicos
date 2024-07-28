@@ -15,5 +15,6 @@ extern int cantidadVentas;
 
 void agregarVenta();
 void verVentasAgregadas();
+void verVentasAgregadasPrecio();
 
 #endif
