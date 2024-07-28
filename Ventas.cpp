@@ -44,3 +44,33 @@ void verVentasAgregadas(){
         cout << "------------------------" << endl;
     }
 }    
+
+void verVentasAgregadasPrecio(){
+	if (cantidadVentas == 0) {
+        cout << endl;
+        cout << "No hay ventas agregadas." << endl;
+        return;
+    }
+    
+    Venta ventasOrdenadas[100];
+    for (int i = 0; i < cantidadVentas; i++) {
+        ventasOrdenadas[i] = ventas[i];
+    }
+
+    for (int i = 0; i < cantidadVentas - 1; i++) {
+        for (int j = 0; j < cantidadVentas - i - 1; j++) {
+            if (ventasOrdenadas[j].precioTotal > ventasOrdenadas[j + 1].precioTotal) {
+                Venta temp = ventasOrdenadas[j];
+                ventasOrdenadas[j] = ventasOrdenadas[j + 1];
+                ventasOrdenadas[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < cantidadVentas; i++) {
+        cout << endl;
+        cout << "Venta " << i + 1 << ": " << ventasOrdenadas[i].producto << endl;
+        cout << "Precio total: " << ventasOrdenadas[i].precioTotal << endl;
+        cout << "----------------------------" << endl;
+    }
+}
