@@ -60,7 +60,7 @@ void mostrarMenuBaseDeDatos(){
                 agregarVenta();  //Añade funcion para añadir una nueva venta
                 break;
             case 'H':
-            //Añade funcion para mostrar las ventas realizadas
+            	verVentasAgregadas();  //Añade funcion para mostrar las ventas realizadas
                 break;
             case 'I':
                 //Añade funcion para mostrar las ventas ordenadas por el precio
