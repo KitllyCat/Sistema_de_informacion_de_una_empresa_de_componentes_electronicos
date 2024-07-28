@@ -14,5 +14,6 @@ extern Venta ventas[];
 extern int cantidadVentas;
 
 void agregarVenta();
+void verVentasAgregadas();
 
 #endif
