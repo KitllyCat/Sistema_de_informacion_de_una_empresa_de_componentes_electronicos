@@ -53,7 +53,7 @@ void mostrarMenuBaseDeDatos(){
                 eliminarProducto(); //Añade funcion para eliminar un producto
                 break;
             case 'F':
-                //Añadir funcion para actualizar los datos existentes
+                actualizarProducto(); //Añade funcion para actualizar los datos existentes
                 break;
             case 'G':
                 //Añadir funcion para añadir una nueva venta
