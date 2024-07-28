@@ -9,5 +9,5 @@ extern int cantidadProductos;
 
 void agregarProducto();
 void eliminarProducto();
-
+void actualizarProducto();
 #endif
