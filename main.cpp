@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h> //libreria para las tildes
-#include "usuario.h" //esta es la libreria que se usa para la funciones del menu
+#include "menusuario.h" //esta es la libreria que se usa para la funciones del menu
+#include "recomendacion.h" //esta libreria es de las recomenciones y su almacen
 using namespace std;
 
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
@@ -65,7 +66,7 @@ void mostrarMenuBaseDeDatos(){
                 //Añadir funcion para mostrar las ventas ordenadas por el precio
                 break;
             case 'J':
-                //Añadir funcion para ver las recomendaciones de los usuarios
+                mostrarRecomendacion();
                 break;
             case 'K':
                 cout << "Regresando al menú principal..." << endl;
@@ -110,7 +111,7 @@ void mostrarMenuUsuario(){
                 //Añadir funcion para adquirir un nuevo producto
                 break;
             case 'E':
-                //Añadir funcion para dejar una recomendación 
+                dejarRecomendacion();
                 break;
             case 'F':
                 cout << "Regresando al menú principal..." << endl;
