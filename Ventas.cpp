@@ -28,4 +28,19 @@ void agregarVenta(){
     cantidadVentas++;
     cout << "Venta agregada" << endl;
 }
-    
+
+void verVentasAgregadas(){
+	if (cantidadVentas == 0) {
+     	cout<<endl;   	
+        cout << "No hay ventas registradas." << endl;
+        return;
+    }
+    cout << "Listado de ventas:" << endl;
+    for (int i = 0; i < cantidadVentas; i++) {
+        cout << "Venta " << ventas[i].idVenta << ":" << endl;
+        cout << "Producto: " << ventas[i].producto << endl;
+        cout << "Cantidad: " << ventas[i].cantidad << endl;
+        cout << "Precio total: " << ventas[i].precioTotal << endl;
+        cout << "------------------------" << endl;
+    }
+}    
