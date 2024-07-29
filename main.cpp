@@ -42,7 +42,7 @@ void mostrarMenuBaseDeDatos(){
 
         switch (opcionBaseDeDatos){
             case 'A':
-                verProductosAgregados(); //Añade funcion para ver los productos registrados 
+				verProductosAgregados(); //Añade funcion para ver los productos registrados 
                 break;
             case 'B':
                 verProductosAgregadosAlf(); //Añade funcion para ver los productos ordenados alfabéticamente
