@@ -11,6 +11,7 @@ struct Producto{
 extern Producto productos[];
 extern int cantidadProductos;
 
+void inicializarProductos();
 void verProductosAgregados();
 void verProductosAgregadosAlf();
 void verProductosAgregadosPrecio();
