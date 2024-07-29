@@ -9,6 +9,40 @@ using namespace std;
 
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
 
+void inicializarProductos() {
+    productos[0] = {"Tarjeta_Grafica_NVIDIA_GeForce_RTX_3080", 700};
+    productos[1] = {"Tarjeta_Grafica_AMD_Radeon_RX_6800_XT", 650};
+    productos[2] = {"Tarjeta_Grafica_NVIDIA_GeForce_GTX_1660_Super", 230};
+    productos[3] = {"Procesador_Intel_Core_i9_11900K", 550};
+    productos[4] = {"Procesador_AMD_Ryzen_9_5900X", 500};
+    productos[5] = {"Procesador_Intel_Core_i5_11400F", 180};
+    productos[6] = {"Memoria_RAM_Corsair_Vengeance_LPX_16GB", 80};
+    productos[7] = {"Memoria_RAM_G_Skill_Trident_Z_RGB_32GB", 170};
+    productos[8] = {"Memoria_RAM_Kingston_HyperX_Fury_8GB", 40};
+    productos[9] = {"Memoria_de_almacenamiento_Samsung_970_EVO_Plus_1TB", 150};
+    productos[10] = {"Memoria_de_almacenamiento_WD_Blue_500GB", 55};
+    productos[11] = {"Memoria_de_almacenamiento_Seagate_Barracuda_2TB", 60};
+    productos[12] = {"Fuente_de_alimentacion_EVGA_SuperNOVA_750_G5", 130};
+    productos[13] = {"Fuente_de_alimentacion_Corsair_RM850x", 140};
+    productos[14] = {"Fuente_de_alimentacion_Seasonic_Focus_GX_650", 100};
+    productos[15] = {"Placa_madre_base_ASUS_ROG_Strix_Z590_E_Gaming", 370};
+    productos[16] = {"Placa_madre_base_MSI_B450_TOMAHAWK_MAX", 110};
+    productos[17] = {"Placa_madre_base_Gigabyte_Z490_AORUS_Elite", 190};
+    productos[18] = {"Monitor_LG_UltraGear_27GL83A_B_27_QHD_IPS", 380};
+    productos[19] = {"Monitor_ASUS_TUF_Gaming_VG249Q_23.8_FHD", 200};
+    productos[20] = {"Monitor_Dell_UltraSharp_U2720Q_27_4K", 550};
+    productos[21] = {"Teclado_Logitech_G_Pro_X_Mechanical_Gaming_Keyboard", 150};
+    productos[22] = {"Teclado_Razer_BlackWidow_Elite_Mechanical_Gaming_Keyboard", 170};
+    productos[23] = {"Teclado_SteelSeries_Apex_Pro_Mechanical_Gaming_Keyboard", 200};
+    productos[24] = {"Raton_Logitech_MX_Master_3", 100};
+    productos[25] = {"Raton_Razer_DeathAdder_V2", 70};
+    productos[26] = {"Raton_Corsair_Dark_Core_RGB_SE", 90};
+    productos[27] = {"Audifonos_HyperX_Cloud_II_Gaming_Headset", 100};
+    productos[28] = {"Audifonos_SteelSeries_Arctis_7_Wireless", 150};
+    productos[29] = {"Audifonos_Logitech_G_Pro_X_Wireless", 200};
+    cantidadProductos = 30;
+}
+
 void mostrarMenuPrincipal(){
     cout <<RED <<"----------|"<<CYAN<<"N-Tek"<<RED<<"|----------" << endl;
     cout <<GRAY << "Bienvenido al menú principal, seleccione si es un usuario o si desea acceder a la base de datos: " << endl;
@@ -127,9 +161,10 @@ void mostrarMenuUsuario(){
 }
 
 int main(){
-    SetConsoleOutputCP(CP_UTF8); 
+	SetConsoleOutputCP(CP_UTF8);
+	inicializarProductos();
     do{
-        mostrarMenuPrincipal();
+		mostrarMenuPrincipal();
 
         switch (opcionPrincipal){
             case 'A':{
