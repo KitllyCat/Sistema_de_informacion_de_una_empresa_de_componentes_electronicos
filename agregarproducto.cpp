@@ -31,8 +31,8 @@ void eliminarProducto() {
 }
 
 void actualizarProducto() {
-	string nombreActualizar;
-    cout <<LGREEN<<"Ingrese el nombre del producto a actualizar: ";
+    string nombreActualizar;
+    cout <<LGREEN<< "Ingrese el nombre del producto a actualizar: ";
     cin.ignore();
     getline(cin, nombreActualizar);
     bool encontrado = false;
@@ -41,7 +41,7 @@ void actualizarProducto() {
             cout << LGREEN<<"Ingrese el nuevo precio del producto: ";
             cin >> productos[i].precioPromedio;
             cout<<endl;
-            cout <<GREEN<<"Producto actualizado con éxito!" << endl;
+            cout << GREEN<<"Producto actualizado con éxito!" << endl;
             encontrado = true;
             break;
         }
@@ -50,3 +50,4 @@ void actualizarProducto() {
         cout <<RED<< "Producto no encontrado." << endl;
     }
 }
+
