@@ -1,7 +1,9 @@
 #include <iostream>
-#include <windows.h> //libreria para las tildes
-#include "menusuario.h" //esta es la libreria que se usa para la funciones del menu
-#include "recomendacion.h" //esta libreria es de las recomenciones y su almacen
+#include <windows.h>
+#include "recomendacion.h" 
+#include "mostrar_p.h"
+#include "agregar_p.h"
+#include "venta_p.h"
 using namespace std;
 
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
@@ -38,32 +40,32 @@ void mostrarMenuBaseDeDatos(){
         cout << endl;
 
         switch (opcionBaseDeDatos){
-            case 'A': 
-                //Añadir funcion para ver losproductos registrados 
+            case 'A':
+                verProductosAgregados(); //Añade funcion para ver los productos registrados 
                 break;
             case 'B':
-                //Añadir funcion para ver los productos ordenados alfabéticamente
+                verProductosAgregadosAlf(); //Añade funcion para ver los productos ordenados alfabéticamente
                 break;
             case 'C':
-                //Añadir funcion para ver los productos ordenados por su precio
+                verProductosAgregadosPrecio(); //Añade funcion para ver los productos ordenados por su precio
                 break;
             case 'D':
-                //Añadir funcion para agregar un nuevo producto
+                agregarProducto(); //Añade funcion para agregar un nuevo producto
                 break;
             case 'E':
-                //Añadir funcion para eliminar un producto
+                eliminarProducto(); //Añade funcion para eliminar un producto
                 break;
             case 'F':
-                //Añadir funcion para actualizar los datos existentes
+                actualizarProducto(); //Añade funcion para actualizar los datos existentes
                 break;
             case 'G':
-                //Añadir funcion para añadir una nueva venta
+                agregarVenta();  //Añade funcion para añadir una nueva venta
                 break;
             case 'H':
-                //Añadir funcion para mostrar las ventas realizadas
+            	verVentasAgregadas();  //Añade funcion para mostrar las ventas realizadas
                 break;
             case 'I':
-                //Añadir funcion para mostrar las ventas ordenadas por el precio
+                verVentasAgregadasPrecio(); //Añade funcion para mostrar las ventas ordenadas por el precio
                 break;
             case 'J':
                 mostrarRecomendacion();
@@ -87,36 +89,32 @@ void mostrarMenuUsuario(){
         cout << "----- \"N-Tek\" -----" << endl;
         cout << "Bienvenido a N-Tek, una empresa de componentes electrónicos que ofrece diversa cantidad de productos a sus clientes. Seleccione la opción a la que desea acceder:" << endl;
         cout << "(A) Mostrar todos los productos existentes" << endl;
-        cout << "(B) Mostrar los productos por marca" << endl;
+        cout << "(B) Mostrar los productos por orden alfabetico" << endl;
         cout << "(C) Mostrar los productos por precio" << endl;
-        cout << "(D) Adquirir un nuevo producto" << endl;
-        cout << "(E) Dejar una recomendación" << endl;
-        cout << "(F) Regresar al menú principal" << endl;
-        cout << "(G) Salir" << endl;
+        cout << "(D) Dejar una recomendación" << endl;
+        cout << "(E) Regresar al menú principal" << endl;
+        cout << "(F) Salir" << endl;
         cout << "Seleccione su opción: ";
         cin >> opcionUsuario;
         cout << endl;
 
         switch (opcionUsuario){
             case 'A':
-                //Añadir funcion para mostrar los productos existentes
+                verProductosAgregados();
                 break;
             case 'B':
-                //Añadir funcion para mostrar los productos por marca
+                verProductosAgregadosAlf();
                 break;
             case 'C':
-                //Añadir funcion para mostrar los productos por precio
+                verProductosAgregadosPrecio();
                 break;
             case 'D':
-                //Añadir funcion para adquirir un nuevo producto
-                break;
-            case 'E':
                 dejarRecomendacion();
                 break;
-            case 'F':
+            case 'E':
                 cout << "Regresando al menú principal..." << endl;
                 return;
-            case 'G':
+            case 'F':
                 cout << "Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
             default:
