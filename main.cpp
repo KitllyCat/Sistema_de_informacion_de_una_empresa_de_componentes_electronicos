@@ -4,38 +4,39 @@
 #include "mostrar_p.h"
 #include "agregar_p.h"
 #include "venta_p.h"
+#include "colors.h"//libreria para los colores
 using namespace std;
 
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
 
 void mostrarMenuPrincipal(){
-    cout << "----- \"N-Tek\" -----" << endl;
-    cout << "Bienvenido al menú principal, seleccione si es un usuario o si desea acceder a la base de datos: " << endl;
-    cout << "(A) Soy un usuario" << endl;
-    cout << "(B) Deseo modificar la base de datos (empleado)" << endl;
-    cout << "(C) Salir" << endl;
-    cout << "Seleccione su opción: ";
+    cout <<RED <<"----------|"<<CYAN<<"N-Tek"<<RED<<"|----------" << endl;
+    cout <<GRAY << "Bienvenido al menú principal, seleccione si es un usuario o si desea acceder a la base de datos: " << endl;
+    cout <<GREEN<<"(A) Soy un usuario" << endl;
+    cout <<GREEN<< "(B) Deseo modificar la base de datos"<<GRAY<<"(empleado)" << endl;
+    cout <<RED<<"(C) Salir" << endl;
+    cout <<GREEN<<"Seleccione su opción: ";
     cin >> opcionPrincipal;
     cout << endl;
 }
 
 void mostrarMenuBaseDeDatos(){
     do {
-        cout << "----- \"N-Tek\" -----" << endl;
-        cout << "Bienvenido a la base de datos de N-Tek, seleccione la opción de la operación que desea realizar en el programa: " << endl;
-        cout << "(A) Ver todos los productos registrados" << endl;
-        cout << "(B) Ver todos los productos ordenados alfabéticamente" << endl;
-        cout << "(C) Ver todos los productos ordenados por su precio" << endl;
-        cout << "(D) Agregar un nuevo producto" << endl;
-        cout << "(E) Eliminar un producto" << endl;
-        cout << "(F) Actualizar los datos existentes" << endl;
-        cout << "(G) Añadir una nueva venta" << endl;
-        cout << "(H) Mostrar las ventas realizadas" << endl;
-        cout << "(I) Mostrar las ventas ordenadas por el precio" << endl;
-        cout << "(J) Ver las recomendaciones de los usuarios" << endl;
-        cout << "(K) Regresar al menú principal" << endl;
-        cout << "(L) Salir" << endl;
-        cout << "Seleccione su opción: ";
+        cout <<RED<<"----------|"<<GREEN<<"N-Tek"<<RED<<"|----------" << endl;
+        cout <<GRAY<< "Bienvenido a la base de datos de N-Tek, seleccione la opción de la operación que desea realizar en el programa: " << endl;
+        cout <<GREEN<< "(A) Ver todos los productos registrados" << endl;
+        cout <<GREEN<< "(B) Ver todos los productos ordenados alfabéticamente" << endl;
+        cout <<GREEN<< "(C) Ver todos los productos ordenados por su precio" << endl;
+        cout <<GREEN<< "(D) Agregar un nuevo producto" << endl;
+        cout <<GREEN<< "(E) Eliminar un producto" << endl;
+        cout <<GREEN<< "(F) Actualizar los datos existentes" << endl;
+        cout <<GREEN<< "(G) Añadir una nueva venta" << endl;
+        cout <<GREEN<< "(H) Mostrar las ventas realizadas" << endl;
+        cout <<GREEN<< "(I) Mostrar las ventas ordenadas por el precio" << endl;
+        cout <<GREEN<< "(J) Ver las recomendaciones de los usuarios" << endl;
+        cout <<GREEN<< "(K) Regresar al menú principal" << endl;
+        cout <<RED << "(L) Salir" << endl;
+        cout <<GREEN<< "Seleccione su opción: ";
         cin >> opcionBaseDeDatos;
         cout << endl;
 
@@ -71,13 +72,13 @@ void mostrarMenuBaseDeDatos(){
                 mostrarRecomendacion();
                 break;
             case 'K':
-                cout << "Regresando al menú principal..." << endl;
+                cout <<LGREEN<< "Regresando al menú principal..." << endl;
                 return;
             case 'L':
-                cout << "Saliendo del programa, gracias por su visita..." << endl;
+                cout << MAGENTA<< "Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
             default:
-                cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
+                cout <<RED<<"Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
         }
         cout << endl;
@@ -86,15 +87,15 @@ void mostrarMenuBaseDeDatos(){
 
 void mostrarMenuUsuario(){
     do{
-        cout << "----- \"N-Tek\" -----" << endl;
-        cout << "Bienvenido a N-Tek, una empresa de componentes electrónicos que ofrece diversa cantidad de productos a sus clientes. Seleccione la opción a la que desea acceder:" << endl;
-        cout << "(A) Mostrar todos los productos existentes" << endl;
-        cout << "(B) Mostrar los productos por orden alfabetico" << endl;
-        cout << "(C) Mostrar los productos por precio" << endl;
-        cout << "(D) Dejar una recomendación" << endl;
-        cout << "(E) Regresar al menú principal" << endl;
-        cout << "(F) Salir" << endl;
-        cout << "Seleccione su opción: ";
+        cout <<RED<<"----------|"<<GREEN<<"N-Tek"<<RED<<"|----------" << endl;
+        cout <<GRAY << "Bienvenido a N-Tek, una empresa de componentes electrónicos que ofrece diversa cantidad de productos a sus clientes. Seleccione la opción a la que desea acceder:" << endl;
+        cout <<GREEN<< "(A) Mostrar todos los productos existentes" << endl;
+        cout <<GREEN<< "(B) Mostrar los productos por orden alfabetico" << endl;
+        cout <<GREEN<< "(C) Mostrar los productos por precio" << endl;
+        cout <<GREEN<< "(D) Dejar una recomendación" << endl;
+        cout <<GREEN<< "(E) Regresar al menú principal" << endl;
+        cout <<RED<< "(F) Salir" << endl;
+        cout <<GREEN<< "Seleccione su opción: ";
         cin >> opcionUsuario;
         cout << endl;
 
@@ -112,13 +113,13 @@ void mostrarMenuUsuario(){
                 dejarRecomendacion();
                 break;
             case 'E':
-                cout << "Regresando al menú principal..." << endl;
+                cout <<LGREEN<< "Regresando al menú principal..." << endl;
                 return;
             case 'F':
-                cout << "Saliendo del programa, gracias por su visita..." << endl;
+                cout <<MAGENTA<<"Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
             default:
-                cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
+                cout <<RED<< "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
         }
         cout << endl;
@@ -126,7 +127,7 @@ void mostrarMenuUsuario(){
 }
 
 int main(){
-    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8); 
     do{
         mostrarMenuPrincipal();
 
@@ -137,21 +138,24 @@ int main(){
             }
             case 'B':{
                 string contrasena;
-   				cout << "Ingrese la contraseña para acceder a la base de datos: ";
+   				cout << LGREEN<< "Ingrese la contraseña para acceder a la base de datos: ";
     			cin >> contrasena;
     			if (contrasena == "employeesonly"){
+    				cout << GREEN<<"La contraseña es correcta, accediendo a la base de datos..."<<endl;
+    				cout << endl;
 					mostrarMenuBaseDeDatos();
    				}else{
-        			cout << "La contraseña es incorrecta, intente de nuevo..." << endl;
+        			cout <<RED<< "La contraseña es incorrecta, intente de nuevo..." << endl;
+        			cout << endl;
    				}
                 break;
             }
             case 'C':{
-                cout << "Saliendo del programa, gracias por su visita..." << endl;
+                cout << MAGENTA<< "Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
             }
             default:{
-                cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
+                cout <<RED<<"Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
         	}
         cout << endl;
