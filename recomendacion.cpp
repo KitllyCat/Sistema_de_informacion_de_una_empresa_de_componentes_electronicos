@@ -1,5 +1,6 @@
 #include <iostream>
 #include "recomendacion.h"
+#include "colors.h"
 using namespace std;
 
 const int Max_Recomendaciones = 99;
@@ -8,22 +9,22 @@ int numRecomendaciones = 0;
 
 void dejarRecomendacion(){
     string recomendacion;
-    cout << "Ingrese su recomendacion: ";
+    cout << GREEN<<"Ingrese su recomendacion: ";
     cin.ignore();
     getline(cin, recomendacion);
     recomendaciones[numRecomendaciones] = recomendacion;
     numRecomendaciones++;
     
-    cout << "Gracias por dejar su recomendacion...!!!" << endl;
+    cout << ORANGE<<"Gracias por dejar su recomendacion...!!!" << endl;
 }
 
 void mostrarRecomendacion(){
     if (numRecomendaciones == 0){
-        cout << "No hay recomendaciones disponibles, intentelo en otra ocasion." << endl;
+        cout << RED<<"No hay recomendaciones disponibles, intentelo en otra ocasion." << endl;
         return;
     }
 
     for (int i = 0; i < numRecomendaciones; i++) {
-        cout << (i + 1) << ". " << recomendaciones[i] << endl;
+        cout <<LBLUE<< (i + 1) << ". " << GREEN<<recomendaciones[i] << endl;
     }
 }
