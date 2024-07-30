@@ -1,4 +1,6 @@
 #include "mostrar_p.h"
+#include "colors.h"
+
 Producto productos[100];
 int cantidadProductos = 0;
 
@@ -6,13 +8,13 @@ void verProductosAgregados() {
 
     if (cantidadProductos == 0) {
         cout << endl;
-        cout << "No hay productos agregados." << endl;
+        cout << RED << "No hay productos agregados." << endl;
         return;
     }
     for (int i = 0; i < cantidadProductos; i++) {
         cout << endl;
-        cout << "Producto N°" << i + 1 << ": " << productos[i].nombre << endl;
-        cout << "----------------------------" << endl;
+        cout << BLUE<<"Producto N°" <<LBLUE<< i + 1 <<BLUE<< ": " << GREEN<< productos[i].nombre << endl;
+        cout << GRAY<< "----------------------------" << endl;
     }
 }
 
@@ -20,7 +22,7 @@ void verProductosAgregadosAlf() {
 
     if (cantidadProductos == 0) {
         cout << endl;
-        cout << "No hay productos agregados." << endl;
+        cout << RED<<"No hay productos agregados." << endl;
         return;
     }
     Producto productosOrdenados[100];
@@ -38,8 +40,8 @@ void verProductosAgregadosAlf() {
     }
     for (int i = 0; i < cantidadProductos; i++) {
         cout << endl;
-        cout << "Producto N°" << i + 1 << ": " << productosOrdenados[i].nombre << endl;
-        cout << "----------------------------" << endl;
+        cout << BLUE<<"Producto N°" <<LBLUE<< i + 1 << BLUE<<": " <<GREEN<< productosOrdenados[i].nombre << endl;
+        cout << GRAY<< "----------------------------" << endl;
     }
 }
 
@@ -47,7 +49,7 @@ void verProductosAgregadosPrecio() {
 
     if (cantidadProductos == 0) {
         cout << endl;
-        cout << "No hay productos agregados." << endl;
+        cout << RED <<"No hay productos agregados." << endl;
         return;
     }
     
@@ -68,8 +70,8 @@ void verProductosAgregadosPrecio() {
 
     for (int i = 0; i < cantidadProductos; i++) {
         cout << endl;
-        cout << "Producto N°" << i + 1 << ": " << productosOrdenados[i].nombre << endl;
-        cout << "Precio Promedio: " << productosOrdenados[i].precioPromedio << endl;
-        cout << "----------------------------" << endl;
+        cout << BLUE<<"Producto N°" <<LBLUE<< i + 1 <<BLUE<< ": " <<GREEN<< productosOrdenados[i].nombre << endl;
+        cout << LGREEN<<"Precio Promedio: " << GREEN<< productosOrdenados[i].precioPromedio << endl;
+        cout << GRAY<<"----------------------------" << endl;
     }
 }
