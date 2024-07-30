@@ -1,79 +1,118 @@
 #include <iostream>
-#include <windows.h> //libreria para las tildes
+#include <windows.h>
+#include "recomendacion.h" 
+#include "mostrar_p.h"
+#include "agregar_p.h"
+#include "venta_p.h"
+#include "colors.h"//libreria para los colores
 using namespace std;
 
 char opcionPrincipal, opcionBaseDeDatos, opcionUsuario;
 
+void inicializarProductos() {
+    productos[0] = {"Tarjeta_Grafica_NVIDIA_GeForce_RTX_3080", 700};
+    productos[1] = {"Tarjeta_Grafica_AMD_Radeon_RX_6800_XT", 650};
+    productos[2] = {"Tarjeta_Grafica_NVIDIA_GeForce_GTX_1660_Super", 230};
+    productos[3] = {"Procesador_Intel_Core_i9_11900K", 550};
+    productos[4] = {"Procesador_AMD_Ryzen_9_5900X", 500};
+    productos[5] = {"Procesador_Intel_Core_i5_11400F", 180};
+    productos[6] = {"Memoria_RAM_Corsair_Vengeance_LPX_16GB", 80};
+    productos[7] = {"Memoria_RAM_G_Skill_Trident_Z_RGB_32GB", 170};
+    productos[8] = {"Memoria_RAM_Kingston_HyperX_Fury_8GB", 40};
+    productos[9] = {"Memoria_de_almacenamiento_Samsung_970_EVO_Plus_1TB", 150};
+    productos[10] = {"Memoria_de_almacenamiento_WD_Blue_500GB", 55};
+    productos[11] = {"Memoria_de_almacenamiento_Seagate_Barracuda_2TB", 60};
+    productos[12] = {"Fuente_de_alimentacion_EVGA_SuperNOVA_750_G5", 130};
+    productos[13] = {"Fuente_de_alimentacion_Corsair_RM850x", 140};
+    productos[14] = {"Fuente_de_alimentacion_Seasonic_Focus_GX_650", 100};
+    productos[15] = {"Placa_madre_base_ASUS_ROG_Strix_Z590_E_Gaming", 370};
+    productos[16] = {"Placa_madre_base_MSI_B450_TOMAHAWK_MAX", 110};
+    productos[17] = {"Placa_madre_base_Gigabyte_Z490_AORUS_Elite", 190};
+    productos[18] = {"Monitor_LG_UltraGear_27GL83A_B_27_QHD_IPS", 380};
+    productos[19] = {"Monitor_ASUS_TUF_Gaming_VG249Q_23.8_FHD", 200};
+    productos[20] = {"Monitor_Dell_UltraSharp_U2720Q_27_4K", 550};
+    productos[21] = {"Teclado_Logitech_G_Pro_X_Mechanical_Gaming_Keyboard", 150};
+    productos[22] = {"Teclado_Razer_BlackWidow_Elite_Mechanical_Gaming_Keyboard", 170};
+    productos[23] = {"Teclado_SteelSeries_Apex_Pro_Mechanical_Gaming_Keyboard", 200};
+    productos[24] = {"Raton_Logitech_MX_Master_3", 100};
+    productos[25] = {"Raton_Razer_DeathAdder_V2", 70};
+    productos[26] = {"Raton_Corsair_Dark_Core_RGB_SE", 90};
+    productos[27] = {"Audifonos_HyperX_Cloud_II_Gaming_Headset", 100};
+    productos[28] = {"Audifonos_SteelSeries_Arctis_7_Wireless", 150};
+    productos[29] = {"Audifonos_Logitech_G_Pro_X_Wireless", 200};
+    cantidadProductos = 30;
+}
+
 void mostrarMenuPrincipal(){
-    cout << "----- \"N-Tek\" -----" << endl;
-    cout << "Bienvenido al menú principal, seleccione si es un usuario o si desea acceder a la base de datos: " << endl;
-    cout << "(A) Soy un usuario" << endl;
-    cout << "(B) Deseo modificar la base de datos (empleado)" << endl;
-    cout << "(C) Salir" << endl;
-    cout << "Seleccione su opción: ";
+    cout <<RED <<"----------|"<<CYAN<<"N-Tek"<<RED<<"|----------" << endl;
+    cout <<GRAY << "Bienvenido al menú principal, seleccione si es un usuario o si desea acceder a la base de datos: " << endl;
+    cout <<GREEN<<"(A) Soy un usuario" << endl;
+    cout <<LGREEN<< "(B) Deseo modificar la base de datos"<<GRAY<<"(empleado)" << endl;
+    cout <<RED<<"(C) Salir" << endl;
+    cout <<WHITE<<"Seleccione su opción: ";
     cin >> opcionPrincipal;
     cout << endl;
 }
 
 void mostrarMenuBaseDeDatos(){
     do {
-        cout << "----- \"N-Tek\" -----" << endl;
-        cout << "Bienvenido a la base de datos de N-Tek, seleccione la opción de la operación que desea realizar en el programa: " << endl;
-        cout << "(A) Ver todos los productos registrados" << endl;
-        cout << "(B) Ver todos los productos ordenados alfabéticamente" << endl;
-        cout << "(C) Ver todos los productos ordenados por su precio" << endl;
-        cout << "(D) Agregar un nuevo producto" << endl;
-        cout << "(E) Eliminar un producto" << endl;
-        cout << "(F) Actualizar los datos existentes" << endl;
-        cout << "(G) Añadir una nueva venta" << endl;
-        cout << "(H) Mostrar las ventas realizadas" << endl;
-        cout << "(I) Mostrar las ventas ordenadas por el precio" << endl;
-        cout << "(J) Ver las recomendaciones de los usuarios" << endl;
-        cout << "(K) Regresar al menú principal" << endl;
-        cout << "(L) Salir" << endl;
-        cout << "Seleccione su opción: ";
+        cout <<RED<<"----------|"<<GREEN<<"N-Tek"<<RED<<"|----------" << endl;
+        cout <<GRAY<< "Bienvenido a la base de datos de N-Tek, seleccione la opción de la operación que desea realizar en el programa: " << endl;
+        cout <<LGREEN<< "(A) Ver todos los productos registrados" << endl;
+        cout <<LGREEN<< "(B) Ver todos los productos ordenados alfabéticamente" << endl;
+        cout <<LGREEN<< "(C) Ver todos los productos ordenados por su precio" << endl;
+        cout <<LGREEN<< "(D) Agregar un nuevo producto" << endl;
+        cout <<LGREEN<< "(E) Eliminar un producto" << endl;
+        cout <<LGREEN<< "(F) Actualizar los datos existentes" << endl;
+        cout <<LGREEN<< "(G) Añadir una nueva venta" << endl;
+        cout <<LGREEN<< "(H) Mostrar las ventas realizadas" << endl;
+        cout <<LGREEN<< "(I) Mostrar las ventas ordenadas por el precio" << endl;
+        cout <<LGREEN<< "(J) Ver las recomendaciones de los usuarios" << endl;
+        cout <<LGREEN<< "(K) Regresar al menú principal" << endl;
+        cout <<RED << "(L) Salir" << endl;
+        cout <<WHITE<< "Seleccione su opción: ";
         cin >> opcionBaseDeDatos;
         cout << endl;
 
         switch (opcionBaseDeDatos){
             case 'A':
-                //Añadir funcion para ver losproductos registrados 
+				verProductosAgregados(); //Añade funcion para ver los productos registrados 
                 break;
             case 'B':
-                //Añadir funcion para ver los productos ordenados alfabéticamente
+                verProductosAgregadosAlf(); //Añade funcion para ver los productos ordenados alfabéticamente
                 break;
             case 'C':
-                //Añadir funcion para ver los productos ordenados por su precio
+                verProductosAgregadosPrecio(); //Añade funcion para ver los productos ordenados por su precio
                 break;
             case 'D':
-                //Añadir funcion para agregar un nuevo producto
+                agregarProducto(); //Añade funcion para agregar un nuevo producto
                 break;
             case 'E':
-                //Añadir funcion para eliminar un producto
+                eliminarProducto(); //Añade funcion para eliminar un producto
                 break;
             case 'F':
-                //Añadir funcion para actualizar los datos existentes
+                actualizarProducto(); //Añade funcion para actualizar los datos existentes
                 break;
             case 'G':
-                //Añadir funcion para añadir una nueva venta
+                agregarVenta();  //Añade funcion para añadir una nueva venta
                 break;
             case 'H':
-                //Añadir funcion para mostrar las ventas realizadas
+            	verVentasAgregadas();  //Añade funcion para mostrar las ventas realizadas
                 break;
             case 'I':
-                //Añadir funcion para mostrar las ventas ordenadas por el precio
+                verVentasAgregadasPrecio(); //Añade funcion para mostrar las ventas ordenadas por el precio
                 break;
             case 'J':
-                //Añadir funcion para ver las recomendaciones de los usuarios
+                mostrarRecomendacion();
                 break;
             case 'K':
-                cout << "Regresando al menú principal..." << endl;
+                cout <<ORANGE<< "Regresando al menú principal..." << endl;
                 return;
             case 'L':
-                cout << "Saliendo del programa, gracias por su visita..." << endl;
+                cout << MAGENTA<< "Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
             default:
-                cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
+                cout <<RED<<"Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
         }
         cout << endl;
@@ -82,43 +121,39 @@ void mostrarMenuBaseDeDatos(){
 
 void mostrarMenuUsuario(){
     do{
-        cout << "----- \"N-Tek\" -----" << endl;
-        cout << "Bienvenido a N-Tek, una empresa de componentes electrónicos que ofrece diversa cantidad de productos a sus clientes. Seleccione la opción a la que desea acceder:" << endl;
-        cout << "(A) Mostrar todos los productos existentes" << endl;
-        cout << "(B) Mostrar los productos por marca" << endl;
-        cout << "(C) Mostrar los productos por precio" << endl;
-        cout << "(D) Adquirir un nuevo producto" << endl;
-        cout << "(E) Dejar una recomendación" << endl;
-        cout << "(F) Regresar al menú principal" << endl;
-        cout << "(G) Salir" << endl;
-        cout << "Seleccione su opción: ";
+        cout <<RED<<"----------|"<<GREEN<<"N-Tek"<<RED<<"|----------" << endl;
+        cout <<GRAY << "Bienvenido a N-Tek, una empresa de componentes electrónicos que ofrece diversa cantidad de productos a sus clientes. Seleccione la opción a la que desea acceder:" << endl;
+        cout <<GREEN<< "(A) Mostrar todos los productos existentes" << endl;
+        cout <<GREEN<< "(B) Mostrar los productos por orden alfabetico" << endl;
+        cout <<GREEN<< "(C) Mostrar los productos por precio" << endl;
+        cout <<GREEN<< "(D) Dejar una recomendación" << endl;
+        cout <<GREEN<< "(E) Regresar al menú principal" << endl;
+        cout <<RED<< "(F) Salir" << endl;
+        cout <<WHITE<< "Seleccione su opción: ";
         cin >> opcionUsuario;
         cout << endl;
 
         switch (opcionUsuario){
             case 'A':
-                //Añadir funcion para mostrar los productos existentes
+                verProductosAgregados();
                 break;
             case 'B':
-                //Añadir funcion para mostrar los productos por marca
+                verProductosAgregadosAlf();
                 break;
             case 'C':
-                //Añadir funcion para mostrar los productos por precio
+                verProductosAgregadosPrecio();
                 break;
             case 'D':
-                //Añadir funcion para adquirir un nuevo producto
+                dejarRecomendacion();
                 break;
             case 'E':
-                //Añadir funcion para dejar una recomendación 
-                break;
-            case 'F':
-                cout << "Regresando al menú principal..." << endl;
+                cout <<ORANGE<< "Regresando al menú principal..." << endl;
                 return;
-            case 'G':
-                cout << "Saliendo del programa, gracias por su visita..." << endl;
+            case 'F':
+                cout <<MAGENTA<<"Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
             default:
-                cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
+                cout <<RED<< "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
         }
         cout << endl;
@@ -126,26 +161,40 @@ void mostrarMenuUsuario(){
 }
 
 int main(){
-    SetConsoleOutputCP(CP_UTF8);
-
+	SetConsoleOutputCP(CP_UTF8);
+	inicializarProductos();
     do{
-        mostrarMenuPrincipal();
+		mostrarMenuPrincipal();
 
         switch (opcionPrincipal){
-            case 'A':
+            case 'A':{
                 mostrarMenuUsuario();
                 break;
-            case 'B':
-                mostrarMenuBaseDeDatos();
+            }
+            case 'B':{
+                string contrasena;
+   				cout <<CYAN<< "Ingrese la contraseña para acceder a la base de datos: ";
+    			cin >> contrasena;
+    			if (contrasena == "employeesonly"){
+    				cout << GREEN<<"La contraseña es correcta, accediendo a la base de datos..."<<endl;
+    				cout << endl;
+					mostrarMenuBaseDeDatos();
+   				}else{
+        			cout <<RED<< "La contraseña es incorrecta, intente de nuevo..." << endl;
+        			cout << endl;
+   				}
                 break;
-            case 'C':
-                cout << "Saliendo del programa, gracias por su visita..." << endl;
+            }
+            case 'C':{
+                cout << MAGENTA<< "Saliendo del programa, gracias por su visita..." << endl;
                 exit(0);
-            default:
-                cout << "Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
+            }
+            default:{
+                cout <<RED<<"Opción inválida. Ingrese correctamente o intente de nuevo" << endl;
                 break;
-        }
+        	}
         cout << endl;
+    	}
     }while (true);
 
     return 0;
